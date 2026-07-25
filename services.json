@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Paperless-ngx",
+    "url": "https://paperless.cribothy.us",
+    "description": "Document management and OCR",
+    "category": "Home"
+  },
+  {
+    "name": "Vaultwarden",
+    "url": "https://vaultwarden.cribothy.us",
+    "description": "Password manager",
+    "category": "Home"
+  },
+  {
+    "name": "Radicale",
+    "url": "https://radicale.cribothy.us",
+    "description": "CalDAV/CardDAV server",
+    "category": "Home"
+  },
+  {
+    "name": "Picoshare",
+    "url": "https://picoshare.cribothy.us",
+    "description": "Minimalist file sharing",
+    "category": "Home"
+  },
+  {
+    "name": "ConvertX",
+    "url": "https://convertx.cribothy.us",
+    "description": "Media conversion tools",
+    "category": "Home"
+  },
+  {
+    "name": "Factorio",
+    "url": "https://factorio.cribothy.us",
+    "description": "Factory building server",
+    "category": "Games"
+  },
+  {
+    "name": "Cobblemon",
+    "url": "https://cobblemon.cribothy.us",
+    "description": "Minecraft Pokémon server",
+    "category": "Games"
+  },
+  {
+    "name": "Jellyfin",
+    "url": "https://jellyfin.cribothy.us",
+    "description": "Media streaming and library",
+    "category": "Media - Consumption"
+  },
+  {
+    "name": "Komga",
+    "url": "https://komga.cribothy.us",
+    "description": "Comics and manga reader",
+    "category": "Media - Consumption"
+  },
+  {
+    "name": "Seerr",
+    "url": "https://seerr.cribothy.us",
+    "description": "Media request management",
+    "category": "Media - Gathering"
+  },
+  {
+    "name": "Sonarr",
+    "url": "https://sonarr.cribothy.us",
+    "description": "TV show automation",
+    "category": "Media - Gathering"
+  },
+  {
+    "name": "Radarr",
+    "url": "https://radarr.cribothy.us",
+    "description": "Movie automation",
+    "category": "Media - Gathering"
+  },
+  {
+    "name": "Prowlarr",
+    "url": "https://prowlarr.cribothy.us",
+    "description": "Indexer manager",
+    "category": "Media - Gathering"
+  },
+  {
+    "name": "qBittorrent",
+    "url": "https://qbit.cribothy.us",
+    "description": "Torrent client",
+    "category": "Media - Gathering"
+  },
+  {
+    "name": "Grafana",
+    "url": "https://grafana.cribothy.us",
+    "description": "Server/Service Observability",
+    "category": "Monitoring"
+  },
+  {
+    "name": "Uptime Kuma",
+    "url": "https://uptime.cribothy.us",
+    "description": "Service uptime monitoring",
+    "category": "Monitoring"
+  }
+]
