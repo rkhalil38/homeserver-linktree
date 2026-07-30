@@ -30,18 +30,6 @@
         "category": "Home"
     },
     {
-        "name": "Factorio",
-        "url": "https://factorio.cribothy.us",
-        "description": "Factorio server",
-        "category": "Games"
-    },
-    {
-        "name": "Cobblemon",
-        "url": "https://cobblemon.cribothy.us",
-        "description": "Cobblemon server",
-        "category": "Games"
-    },
-    {
         "name": "Jellyfin",
         "url": "https://jellyfin.cribothy.us",
         "description": "Media streaming and library",
