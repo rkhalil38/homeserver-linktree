@@ -19,7 +19,7 @@
     },
     {
         "name": "Picoshare",
-        "url": "https://picoshare.cribothy.us",
+        "url": "https://share.cribothy.us",
         "description": "Minimalist file sharing",
         "category": "Home"
     },
@@ -37,7 +37,7 @@
     },
     {
         "name": "Komga",
-        "url": "https://komga.cribothy.us",
+        "url": "https://comics.cribothy.us",
         "description": "Comics and manga reader",
         "category": "Media - Consumption"
     },
