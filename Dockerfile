@@ -1,6 +1,8 @@
 # Stage 1: Build the static Astro site
 FROM docker.io/library/node:22-alpine AS builder
 
+LABEL org.opencontainers.image.source https://github.com/rkhalil38/homeserver-linktree
+
 WORKDIR /app
 
 # Copy dependency manifests and install
