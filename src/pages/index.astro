@@ -8,14 +8,13 @@ import { configSchema, type Service } from '../config/schema';
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const parsedServices = configSchema.parse(rawConfig);
-const servicesWithIcons = await fetchFaviconsForServices(rawConfig);
 
-const groupedServices = servicesWithIcons.reduce((acc, service) => {
+const groupedServices = parsedServices.reduce((acc, service) => {
 	const cat = service.category;
 	if (!acc[cat]) acc[cat] = [];
 	acc[cat].push(service);
 	return acc;
-}, {} as Record<string, (Service & { iconDataUri: string | null })[]>);
+}, {} as Record<string, Service[]>);
 
 const categories = Object.keys(groupedServices).sort();
 ---
@@ -45,9 +44,9 @@ const categories = Object.keys(groupedServices).sort();
                                     rel="noopener noreferrer"
                                     class="group relative flex items-center gap-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 p-5 transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800/80 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/10 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                 >
-                                    {service.iconDataUri ? (
+                                    {service.icon ? (
                                         <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-900 overflow-hidden">
-                                            <img src={service.iconDataUri} alt={`${service.name} icon`} class="h-7 w-7 object-contain" />
+                                            <img src={service.icon} alt={`${service.name} icon`} class="h-7 w-7 object-contain" />
                                         </div>
                                     ) : (
                                         <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-800 text-xl font-bold text-zinc-400 group-hover:bg-zinc-700 transition-colors uppercase">

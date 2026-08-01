@@ -2,84 +2,98 @@
     {
         "name": "Paperless-ngx",
         "url": "https://paperless.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/paperless.svg",
         "description": "Document management and OCR",
         "category": "Home"
     },
     {
         "name": "Vaultwarden",
         "url": "https://vw.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vaultwarden-light.svg",
         "description": "Password manager",
         "category": "Home"
     },
     {
         "name": "Radicale",
         "url": "https://radicale.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radicale.svg",
         "description": "CalDAV/CardDAV server",
         "category": "Home"
     },
     {
         "name": "Picoshare",
         "url": "https://share.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/picoshare.svg",
         "description": "Minimalist file sharing",
         "category": "Home"
     },
     {
         "name": "ConvertX",
         "url": "https://convert.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/convertx.png",
         "description": "Media conversion tools",
         "category": "Home"
     },
     {
         "name": "Jellyfin",
         "url": "https://jellyfin.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/jellyfin.svg",
         "description": "Media streaming and library",
         "category": "Media - Consumption"
     },
     {
         "name": "Komga",
         "url": "https://comics.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/komga.svg",
         "description": "Comics and manga reader",
         "category": "Media - Consumption"
     },
     {
         "name": "Seerr",
         "url": "https://seerr.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/seerr.svg",
         "description": "Media request management",
         "category": "Media - Managing"
     },
     {
         "name": "Sonarr",
         "url": "https://sonarr.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg",
         "description": "TV show automation",
         "category": "Media - Managing"
     },
     {
         "name": "Radarr",
         "url": "https://radarr.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radarr.svg",
         "description": "Movie automation",
         "category": "Media - Managing"
     },
     {
         "name": "Prowlarr",
         "url": "https://prowlarr.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg",
         "description": "Indexer manager",
         "category": "Media - Managing"
     },
     {
         "name": "qBittorrent",
         "url": "https://qbt.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/qbittorrent.svg",
         "description": "Torrent client",
         "category": "Media - Managing"
     },
     {
         "name": "Grafana",
         "url": "https://monitor.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/grafana.svg",
         "description": "Server/Service Observability",
         "category": "Monitoring"
     },
     {
         "name": "Uptime Kuma",
         "url": "https://uptime.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg",
         "description": "Service uptime monitoring",
         "category": "Monitoring"
     }
