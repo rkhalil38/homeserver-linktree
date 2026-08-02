@@ -96,5 +96,12 @@
         "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg",
         "description": "Service uptime monitoring",
         "category": "Monitoring"
+    },
+    {
+        "name": "Home Assistant",
+        "url": "https://home.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/home-assistant.svg",
+        "description": "The living house",
+        "category": "Home"
     }
 ]
