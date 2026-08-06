@@ -1,13 +1,15 @@
 ---
 import Main from "../layouts/Layout.astro"
 import { fetchServices } from "@util/services.ts"
+import hardFallback from "../../public/services.json"
 
 // Allow self-signed certificates for homelab subdomains during build
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const origin = Astro.url.origin;
 const services = await fetchServices(
-    process.env.SERVICES_URL ?? `${origin}/services.json`
+    process.env.SERVICES_URL ?? `${origin}/services.json`,
+    hardFallback
 );
 
 const groupedServices = services.reduce((acc, service) => {

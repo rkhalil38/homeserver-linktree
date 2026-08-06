@@ -1,6 +1,6 @@
 import { configSchema, type Service } from '../config/schema';
 
-export async function fetchServices(url: string): Promise<Service[] | undefined> {
+export async function fetchServices(url: string, fallback: JSON[]): Promise<Service[]> {
     let services;
     try {
         const response = await fetch(url);
@@ -15,9 +15,9 @@ export async function fetchServices(url: string): Promise<Service[] | undefined>
         try {
             parsedServices = configSchema.parse(services);
         } catch (e) {
-            console.warn(`[ WARN ] Failed to parse fetched services, falling back.`)
+            console.warn(`[ WARN ] Failed to parse fetched services.`)
         }
     }
 
-    return parsedServices;
+    return parsedServices ?? configSchema.parse(fallback);
 }
