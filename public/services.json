@@ -103,5 +103,12 @@
         "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/home-assistant.svg",
         "description": "The living house",
         "category": "Home"
+    },
+    {
+        "name": "WireGuard",
+        "url": "https://vpn.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wireguard.svg",
+        "description": "LAN Access",
+        "category": "Monitoring"
     }
 ]
