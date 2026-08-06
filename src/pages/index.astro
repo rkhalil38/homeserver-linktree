@@ -1,15 +1,16 @@
 ---
 import Main from "../layouts/Layout.astro"
-import rawConfig from '../../services.json';
-import { fetchFaviconsForServices } from '@util/favicon'
-import { configSchema, type Service } from '../config/schema';
+import { fetchServices } from "@util/services.ts"
 
 // Allow self-signed certificates for homelab subdomains during build
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-const parsedServices = configSchema.parse(rawConfig);
+const origin = Astro.url.origin;
+const services = await fetchServices(
+    process.env.SERVICES_URL ?? `${origin}/services.json`
+);
 
-const groupedServices = parsedServices.reduce((acc, service) => {
+const groupedServices = services.reduce((acc, service) => {
 	const cat = service.category;
 	if (!acc[cat]) acc[cat] = [];
 	acc[cat].push(service);
