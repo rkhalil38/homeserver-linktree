@@ -110,5 +110,12 @@
         "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wireguard.svg",
         "description": "LAN Access",
         "category": "Monitoring"
+    },
+    {
+        "name": "Speedtest",
+        "url": "https://speedtest.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/speedtest-tracker.svg",
+        "description": "LAN Speedtest",
+        "category": "Monitoring"
     }
 ]
