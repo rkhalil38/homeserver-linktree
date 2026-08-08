@@ -124,5 +124,12 @@
         "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/profilarr.svg",
         "description": "-arr profile management",
         "category": "Media - Managing"
+    },
+    {
+        "name": "RomM",
+        "url": "https://romm.cribothy.us",
+        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/romm.svg",
+        "description": "Browser game emulation/management",
+        "category": "Games"
     }
 ]
