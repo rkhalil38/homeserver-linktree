@@ -1,18 +1,19 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
 interface Props {
-	title: string;
-	description?: string;
+    title: string;
+    description?: string;
 }
 const { title, description = "Rom and Clark's k8s services" } = Astro.props;
 const ogImageUrl = new URL("/otto.png", Astro.site ?? Astro.url);
 ---
+
 <!doctype html>
 <html lang="en" class="bg-gray-950 text-gray-100 antialiased">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
         <link rel="icon" type="image/png" sizes="32x32" href="/otto.png" />
         <link rel="icon" type="image/svg+xml" href="/otto.svg" />
         <link rel="apple-touch-icon" href="/otto.png" />
@@ -27,10 +28,10 @@ const ogImageUrl = new URL("/otto.png", Astro.site ?? Astro.url);
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImageUrl} />
-	</head>
-	<body class="min-h-screen flex flex-col items-center p-6 md:p-12 font-sans">
-		<main class="w-full max-w-3xl flex-1 flex flex-col gap-12">
-			<slot />
-		</main>
-	</body>
+    </head>
+    <body class="min-h-screen flex flex-col items-center p-6 md:p-12 font-sans">
+        <main class="w-full max-w-3xl flex-1 flex flex-col gap-12">
+            <slot />
+        </main>
+    </body>
 </html>

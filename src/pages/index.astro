@@ -1,77 +1,88 @@
 ---
-import Main from "../layouts/Layout.astro"
-import { fetchServices } from "@util/services.ts"
-import hardFallback from "../../public/services.json"
+export const prerender = false;
+
+import Main from "../layouts/Layout.astro";
+import { fetchServices } from "@util/services.ts";
+import hardFallback from "../../public/services.json";
 
 // Allow self-signed certificates for homelab subdomains during build
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-const origin = Astro.url.origin;
-const services = await fetchServices(
-    process.env.SERVICES_URL ?? `${origin}/services.json`,
-    hardFallback
+const servicesUrl = process.env.SERVICES_URL ?? new URL("/services.json", Astro.url).toString();
+
+const services = await fetchServices(servicesUrl, hardFallback);
+
+const groupedServices = services.reduce(
+    (acc, service) => {
+        const cat = service.category;
+        if (!acc[cat]) acc[cat] = [];
+        acc[cat].push(service);
+        return acc;
+    },
+    {} as Record<string, Service[]>
 );
-
-const groupedServices = services.reduce((acc, service) => {
-	const cat = service.category;
-	if (!acc[cat]) acc[cat] = [];
-	acc[cat].push(service);
-	return acc;
-}, {} as Record<string, Service[]>);
 
 const categories = Object.keys(groupedServices).sort();
 ---
 
 <Main title="Cribothy Links">
-    <body class="min-h-screen flex flex-col items-center p-6 md:p-12 font-sans selection:bg-emerald-500/30">
+    <body
+        class="min-h-screen flex flex-col items-center p-6 md:p-12 font-sans selection:bg-emerald-500/30"
+    >
         <main class="w-full max-w-3xl flex-1 flex flex-col gap-12">
             <header class="text-center space-y-4 mt-8">
-                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                    Cribothy	
+                <h1
+                    class="text-4xl md:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400"
+                >
+                    Cribothy
                 </h1>
-                <p class="text-zinc-400 text-lg max-w-xl mx-auto">
-                    Rom and Clark's k8s services
-                </p>
+                <p class="text-zinc-400 text-lg max-w-xl mx-auto">Rom and Clark's k8s services</p>
             </header>
             <div class="space-y-12 pb-12">
-                {categories.map((category) => (
-                    <section class="space-y-4">
-                        <h2 class="text-sm font-bold uppercase tracking-wider text-zinc-500 pl-1 border-l-2 border-emerald-500/50">
-                            {category}
-                        </h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {groupedServices[category].map((service) => (
-                                <a 
-                                    href={service.url} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    class="group relative flex items-center gap-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 p-5 transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800/80 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/10 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                                >
-                                    {service.icon ? (
-                                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-900 overflow-hidden">
-                                            <img src={service.icon} alt={`${service.name} icon`} class="h-7 w-7 object-contain" />
-                                        </div>
-                                    ) : (
-                                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-800 text-xl font-bold text-zinc-400 group-hover:bg-zinc-700 transition-colors uppercase">
-                                            {service.name.charAt(0)}
-                                        </div>
-                                    )}
-                                    
-                                    <div class="flex flex-col">
-                                        <h3 class="font-semibold text-zinc-100 group-hover:text-emerald-400 transition-colors">
-                                            {service.name}
-                                        </h3>
-                                        {service.description && (
-                                            <p class="text-sm text-zinc-400 line-clamp-2">
-                                                {service.description}
-                                            </p>
+                {
+                    categories.map((category) => (
+                        <section class="space-y-4">
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-zinc-500 pl-1 border-l-2 border-emerald-500/50">
+                                {category}
+                            </h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {groupedServices[category].map((service) => (
+                                    <a
+                                        href={service.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="group relative flex items-center gap-4 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 p-5 transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800/80 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/10 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                    >
+                                        {service.icon ? (
+                                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-900 overflow-hidden">
+                                                <img
+                                                    src={service.icon}
+                                                    alt={`${service.name} icon`}
+                                                    class="h-7 w-7 object-contain"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-800 text-xl font-bold text-zinc-400 group-hover:bg-zinc-700 transition-colors uppercase">
+                                                {service.name.charAt(0)}
+                                            </div>
                                         )}
-                                    </div>
-                                </a>
-                            ))}
-                        </div>
-                    </section>
-                ))}
+
+                                        <div class="flex flex-col">
+                                            <h3 class="font-semibold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+                                                {service.name}
+                                            </h3>
+                                            {service.description && (
+                                                <p class="text-sm text-zinc-400 line-clamp-2">
+                                                    {service.description}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </section>
+                    ))
+                }
             </div>
         </main>
     </body>
