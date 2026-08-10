@@ -87,7 +87,7 @@
         "name": "Grafana",
         "url": "https://monitor.cribothy.us",
         "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/grafana.svg",
-        "description": "Server/Service Observability",
+        "description": "Cluster/Service Observability",
         "category": "Monitoring"
     },
     {
